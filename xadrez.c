@@ -5,28 +5,97 @@
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
 int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+    printf("--- Nivel Novato: Loops Simples ---\n");
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+        // Movimentacao do Bispo (5 casas na diagonal superior direita)
+            printf("\n--- Movimentando o Bispo ---\n");
+                for (int i = 0; i < 5; i++) {
+                        printf("Cima\n");
+                                printf("Direita\n");
+                                    }
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+                                        // Movimentacao da Torre (5 casas para a direita)
+                                            printf("\n--- Movimentando a Torre ---\n");
+                                                for (int i = 0; i < 5; i++) {
+                                                        printf("Direita\n");
+                                                            }
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+                                                                // Movimentacao da Rainha (8 casas para a esquerda)
+                                                                    printf("\n--- Movimentando a Rainha ---\n");
+                                                                        int i = 0;
+                                                                            while (i < 8) {
+                                                                                    printf("Esquerda\n");
+                                                                                            i++;
+                                                                                                }
+                                                                                                    
+                                                                                                        printf("--- Nivel Aventureiro: Movimento do Cavalo (Loops Separados) ---\n");
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+                                                                                                            // Movimentacao do Cavalo em 'L' (baixo e esquerda)
+                                                                                                                // Primeiro movimento: 2 casas para baixo (loop 'for')
+                                                                                                                    for (int i = 0; i < 2; i++) {
+                                                                                                                            printf("Baixo\n");
+                                                                                                                                }
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+                                                                                                                                    // Segundo movimento: 1 casa para a esquerda (loop 'do-while')
+                                                                                                                                        int j = 0;
+                                                                                                                                            do {
+                                                                                                                                                    printf("Esquerda\n");
+                                                                                                                                                            j++;
+                                                                                                                                                                } while (j < 1);
 
-    return 0;
-}
+                                                                                                                                                                // Funcao recursiva para mover o Bispo (5 casas diagonal direita para cima)
+                                                                                                                                                                void moverBispo(int casasRestantes) {
+                                                                                                                                                                    if (casasRestantes > 0) {
+                                                                                                                                                                            printf("Cima\n");
+                                                                                                                                                                                    printf("Direita\n");
+                                                                                                                                                                                            moverBispo(casasRestantes - 1);
+                                                                                                                                                                                                }
+                                                                                                                                                                                                }
+
+                                                                                                                                                                                                // Funcao recursiva para mover a Torre (5 casas para a direita)
+                                                                                                                                                                                                void moverTorre(int casasRestantes) {
+                                                                                                                                                                                                    if (casasRestantes > 0) {
+                                                                                                                                                                                                            printf("Direita\n");
+                                                                                                                                                                                                                    moverTorre(casasRestantes - 1);
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                        // Funcao recursiva para mover a Rainha (8 casas para a esquerda)
+                                                                                                                                                                                                                        void moverRainha(int casasRestantes) {
+                                                                                                                                                                                                                            if (casasRestantes > 0) {
+                                                                                                                                                                                                                                    printf("Esquerda\n");
+                                                                                                                                                                                                                                            moverRainha(casasRestantes - 1);
+                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                    printf("--- Nivel Mestre: Movendo Pecas com Recursao e Loops Avancados ---\n");
+
+                                                                                                                                                                                                                                                        // Funcoes recursivas
+                                                                                                                                                                                                                                                            printf("\n--- Bispo (Recursivo) ---\n");
+                                                                                                                                                                                                                                                                moverBispo(5);
+
+                                                                                                                                                                                                                                                                    printf("\n--- Torre (Recursivo) ---\n");
+                                                                                                                                                                                                                                                                        moverTorre(5);
+
+                                                                                                                                                                                                                                                                            printf("\n--- Rainha (Recursivo) ---\n");
+                                                                                                                                                                                                                                                                                moverRainha(8);
+
+                                                                                                                                                                                                                                                                                    // Movimentacao do Cavalo com loops aninhados e 'break'/'continue'
+                                                                                                                                                                                                                                                                                        printf("\n--- Cavalo (Loops Aninhados com Break/Continue) ---\n");
+                                                                                                                                                                                                                                                                                            for (int k = 0; k < 2; k++) {
+                                                                                                                                                                                                                                                                                                    for (int l = 0; l < 2; l++) {
+                                                                                                                                                                                                                                                                                                                if (k == 0) {
+                                                                                                                                                                                                                                                                                                                                printf("Cima\n");
+                                                                                                                                                                                                                                                                                                                                                break; 
+                                                                                                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                                                                                        if (l == 1) {
+                                                                                                                                                                                                                                                                                                                                                                                        printf("Direita\n");
+                                                                                                                                                                                                                                                                                                                                                                                                    } else {
+                                                                                                                                                                                                                                                                                                                                                                                                                    continue; 
+                                                                                                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                return 0;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                
